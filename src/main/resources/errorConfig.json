@@ -1,0 +1,34 @@
+{
+	"GENERIC_ERROR": {
+		"status": 500,
+		"errorMessage": "Internal Server Error"
+	},
+	"CITY_ID_IS_REQUIRED": {
+		"status": 400,
+		"errorMessage": "City ID is Required"
+	},
+	"SORT_TYPE_IS_INVALID": {
+		"status": 400,
+		"errorMessage": "Sort type is invalid. Allowed values are ASC and DESC"
+	},
+	"NO_HOTELS_FOUND_IN_CITY": {
+		"status": 404,
+		"errorMessage": "No hotels found in given city"
+	},
+	"API_KEY_NOT_FOUND": {
+		"status": 403,
+		"errorMessage": "API Key Not Found"
+	},
+	"API_KEY_BLOCKED": {
+		"status": 403,
+		"errorMessage": "API Key Blocked"
+	},
+	"FAILED_TO_GET_API_KEY_STATUS": {
+		"status": 500,
+		"errorMessage": "Failed to validated API Key"
+	},
+	"API_KEY_REQUIRED": {
+		"status": 400,
+		"errorMessage": "API Key Required"
+	}
+}

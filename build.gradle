@@ -1,0 +1,71 @@
+group 'com.agoda.exercise'
+version '0.1-ALPHA'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        flatDir {
+      		dirs 'libs'
+  		}
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+    }
+}
+
+springBoot {
+    executable = true
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-jetty")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.boot:spring-boot-autoconfigure")
+    compile group: 'net.sf.supercsv', name: 'super-csv', version: '2.3.1'
+    
+}
+
+tasks.withType(ScalaCompile) {
+  scalaCompileOptions.useAnt = false
+}
+
+
+
+task fatJar(type: Jar) {
+    baseName = 'agoda-exercise-all'
+    zip64 true
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
+}
+
+jar {
+    zip64 true
+    dependsOn fatJar
+    doLast {
+        tasks.finalZip.execute()
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.2' //we want gradle 2.10 to run this project
+}
+
+task finalZip(type: Zip) {
+    from 'build/libs'
+    baseName = "agoda-exercise"
+}
