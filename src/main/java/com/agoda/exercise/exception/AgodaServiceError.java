@@ -2,6 +2,13 @@ package com.agoda.exercise.exception;
 
 import java.io.Serializable;
 
+/**
+ * @author Manjeer
+ *
+ *         Created on Mar 26, 2017
+ *         
+ *         Agoda Service Error format.
+ */
 public class AgodaServiceError implements Serializable {
 
 	public AgodaServiceError() {

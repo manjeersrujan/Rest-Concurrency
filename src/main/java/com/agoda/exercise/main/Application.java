@@ -14,6 +14,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import com.agoda.exercise.interceptor.APIKeyValidationInterceptor;
 
+/**
+ * @author Manjeer
+ *
+ * Created on Mar 26, 2017
+ */
 @SpringBootApplication
 @Configuration
 @EnableAutoConfiguration

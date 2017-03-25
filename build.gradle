@@ -6,6 +6,7 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
+
 buildscript {
     repositories {
         mavenCentral()

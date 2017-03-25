@@ -21,12 +21,17 @@ import com.agoda.exercise.model.Hotel;
  * @author Manjeer
  *
  *         Created on Mar 23, 2017
+ *         
+ *         Provides all actions to get info related to Hotels. 
  */
 @Component
 public class HotelDao {
 
 	public Map<String, List<Hotel>> hotelsByCity = new HashMap<>();
 
+	/**
+	 * @throws IOException
+	 */
 	public HotelDao() throws IOException {
 
 		ICsvMapReader mapReader = null;
@@ -62,6 +67,11 @@ public class HotelDao {
 
 	}
 
+	/**
+	 * @param cityId
+	 * @return
+	 * @throws AgodaServiceException
+	 */
 	public List<Hotel> getHotelsByCityName(String cityId) throws AgodaServiceException {
 		if (StringUtils.isEmpty(cityId)) {
 			throw new AgodaServiceException("CITY_REQUIRED_TO_GET_HOTELS");

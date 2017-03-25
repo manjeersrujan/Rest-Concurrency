@@ -12,15 +12,26 @@ import com.agoda.exercise.model.GenericServiceResponse;
 import com.agoda.exercise.model.GetHotelsResponse;
 import com.agoda.exercise.service.HotelService;
 
+/**
+ * @author Manjeer
+ *
+ *         Created on Mar 26, 2017
+ */
 @RestController
 public class HotelController {
 
 	@Autowired
 	HotelService hotelService;
 
+	/**
+	 * @param cityId
+	 * @param sortType
+	 * @return
+	 * @throws AgodaServiceException
+	 */
 	@RequestMapping(value = "/hotels", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public GenericServiceResponse<GetHotelsResponse> getHotelsByCity(
-			@RequestParam(name = "cityId", required = true) String cityId,
+			@RequestParam(name = "cityId", required = false) String cityId,
 			@RequestParam(name = "sortType", required = false, defaultValue = "ASC") String sortType)
 			throws AgodaServiceException {
 		GenericServiceResponse<GetHotelsResponse> genericServiceResponse = new GenericServiceResponse<GetHotelsResponse>();

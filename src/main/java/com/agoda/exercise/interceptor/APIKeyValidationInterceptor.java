@@ -15,6 +15,10 @@ import com.agoda.exercise.exception.AgodaServiceException;
  * @author Manjeer
  *
  *         Created on Mar 23, 2017
+ * 
+ *         This will handle all the requests that comes to service. It checks
+ *         the API key and its status. It will not allow in case of any
+ *         issue(Like blocked etc) with API key.
  */
 public class APIKeyValidationInterceptor implements HandlerInterceptor {
 
@@ -25,6 +29,9 @@ public class APIKeyValidationInterceptor implements HandlerInterceptor {
 		API_KEY_ALLOWED, API_KEY_NOT_FOUND, API_KEY_BLOCKED, FAILED_TO_GET_API_KEY_STATUS, API_KEY_REQUIRED;
 	}
 
+	/* (non-Javadoc)
+	 * @see org.springframework.web.servlet.HandlerInterceptor#preHandle(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, java.lang.Object)
+	 */
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {

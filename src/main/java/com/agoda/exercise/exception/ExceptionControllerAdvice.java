@@ -20,9 +20,23 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * @author Manjeer
+ *
+ *         Created on Mar 26, 2017
+ * 
+ *         Handles all exceptions and convert it imto proper HTTP response
+ */
 @ControllerAdvice("com.agoda")
 public class ExceptionControllerAdvice extends ResponseEntityExceptionHandler {
 
+	/**
+	 * @throws JsonParseException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 * 
+	 *             Loads all configured error responses form errorConfig.json.
+	 */
 	public ExceptionControllerAdvice() throws JsonParseException, JsonMappingException, IOException {
 		super();
 		InputStream in = this.getClass().getClassLoader().getResourceAsStream("errorConfig.json");
@@ -38,6 +52,11 @@ public class ExceptionControllerAdvice extends ResponseEntityExceptionHandler {
 
 	Map<String, AgodaServiceError> errorCodeMap = new HashMap<>();
 
+	/**
+	 * @param request
+	 * @param ex
+	 * @return
+	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@ExceptionHandler(AgodaServiceException.class)
 	@ResponseBody

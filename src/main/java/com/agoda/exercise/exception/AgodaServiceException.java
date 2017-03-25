@@ -1,5 +1,12 @@
 package com.agoda.exercise.exception;
 
+/**
+ * @author Manjeer
+ *
+ *         Created on Mar 26, 2017
+ * 
+ *         Costomized Exception to contain any exception within this application
+ */
 public class AgodaServiceException extends Exception {
 
 	int statusCode;
