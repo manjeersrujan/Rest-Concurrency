@@ -17,12 +17,12 @@ Query Params:
 
 	1) cityId - required
 	2) apiKey - required (agoda-api-key-1, agoda-api-key-2  .... agoda-api-key-10 )
-	These are listed in src/main/resources/agoda-api-key.properties
+		These are listed in src/main/resources/agoda-api-key.properties
 	3) sortType - optional. Supports only 2 values ASC (default), DESC
 
 API keys:
 
-	These are a limited pre-defined set in this project. hey are defined in src/main/resources/agoda-api-key.properties along with configured Rate-Limit for each key optionally.
+	These are a limited pre-defined set in this project. They are defined in src/main/resources/agoda-api-key.properties along with configured Rate-Limit for each key optionally.
 
 Hotels:
 
