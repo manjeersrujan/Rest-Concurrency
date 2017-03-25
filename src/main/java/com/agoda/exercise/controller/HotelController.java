@@ -37,6 +37,7 @@ public class HotelController {
 		GenericServiceResponse<GetHotelsResponse> genericServiceResponse = new GenericServiceResponse<GetHotelsResponse>();
 		GetHotelsResponse getHotelsResponse = hotelService.getHotels(cityId, sortType);
 		genericServiceResponse.setPayload(getHotelsResponse);
+		genericServiceResponse.setStatus("SUCCESS");
 		return genericServiceResponse;
 	}
 
