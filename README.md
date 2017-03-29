@@ -35,7 +35,8 @@ Synchronization part:
 
 	If rate count is not required to be 100% accurate, then we could updat counts asynchronously and block it when we see more requests than rate-count.
 
-	src/main/java/com/agoda/exercise/interceptor/APIKeyValidationInterceptor
+	src/main/java/com/agoda/exercise/interceptor/APIKeyValidationInterceptor.java
+	src/main/java/com/agoda/exercise/dao/APIKeyDao.java
 
 
 Exception handling:
